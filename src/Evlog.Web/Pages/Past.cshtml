@@ -1,0 +1,12 @@
+@page
+@inject IEventsService eventsService
+@{
+    var events = eventsService.GetPastEvents();
+}
+
+<h1>Past Events</h1>
+
+@foreach(var ev in events)
+{
+    @Html.Partial("Partials/_EventCard", ev)
+}
